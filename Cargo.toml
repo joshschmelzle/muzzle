@@ -1,0 +1,46 @@
+[package]
+name = "muzzle"
+edition = "2024"
+rust-version = "1.85"
+version = "0.1.0"
+description = "Toggle Zscaler launchd services on macOS for the current session"
+license = "MIT OR Apache-2.0"
+
+[lints.rust]
+unsafe_code = "deny"
+missing_debug_implementations = "warn"
+unreachable_pub = "warn"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery  = { level = "warn", priority = -1 }
+unwrap_used      = "deny"
+expect_used      = "warn"
+panic            = "warn"
+indexing_slicing = "warn"
+string_slice     = "warn"
+todo             = "deny"
+unimplemented    = "deny"
+dbg_macro        = "deny"
+module_name_repetitions = "allow"
+must_use_candidate      = "allow"
+missing_errors_doc      = "allow"
+# `redundant_pub_crate` (nursery) and rustc's `unreachable_pub` give
+# contradictory advice in a binary crate: rustc wants `pub(crate)` on items
+# inside private modules; clippy wants `pub`. We follow rustc here and
+# silence the nursery lint.
+redundant_pub_crate     = "allow"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+owo-colors = { version = "4", features = ["supports-colors"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tabled = "0.20"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "3"

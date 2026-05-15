@@ -1,0 +1,6 @@
+com.zscaler.tray = {
+	active count = 1
+	path = /Library/LaunchAgents/com.zscaler.tray.plist
+	state = running
+	program = /Applications/Zscaler/Zscaler.app/Contents/MacOS/Zscaler
+};

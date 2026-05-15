@@ -1,0 +1,4 @@
+Disabled services for gui/501:
+	"com.apple.example" => false
+	"com.zscaler.tray" => true
+	"com.zscaler.preloginui" => false

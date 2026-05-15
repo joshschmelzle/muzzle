@@ -1,0 +1,5 @@
+Disabled services for system:
+	"com.apple.dummy" => false
+	"com.zscaler.tunnel" => true
+	"com.zscaler.service" => false
+	"com.zscaler.UPMServiceController" => true
